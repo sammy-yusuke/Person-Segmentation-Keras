@@ -13,6 +13,7 @@ def get_batch(items, root_path, nClasses, height, width):
         image_path = root_path + item.split(' ')[0]
         label_path = root_path + item.split(' ')[-1].strip()
         img = cv2.imread(image_path, 1)
+        print(image_path)
         label_img = cv2.imread(label_path, 1)
         im = np.zeros((height, width, 3), dtype='uint8')
         im[:, :, :] = 128

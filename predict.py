@@ -7,7 +7,7 @@ from utils.segdata_generator import generator
 
 def predict_segmentation():
     n_classes = 2
-    images_path = '/home/deep/datasets/'
+    images_path = '/home/ubuntu/datasets/'
     val_file = './data/seg_test.txt'
     input_height = 256
     input_width = 256
@@ -34,7 +34,7 @@ def predict_segmentation():
             seg_img[:, :, 0] += ((pr[:, :] == c) * (colors[c][0])).astype('uint8')
             seg_img[:, :, 1] += ((pr[:, :] == c) * (colors[c][1])).astype('uint8')
             seg_img[:, :, 2] += ((pr[:, :] == c) * (colors[c][2])).astype('uint8')
-        cv2.imshow('test', seg_img)
+        # cv2.imshow('test', seg_img)
         cv2.imwrite('./output/{}.jpg'.format(i), seg_img)
         i += 1
         cv2.waitKey(30)

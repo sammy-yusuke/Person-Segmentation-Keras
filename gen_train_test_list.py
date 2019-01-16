@@ -1,8 +1,8 @@
 import os
 from tqdm import tqdm
 
-color_img_path = '/home/deep/datasets/humanparsing/JPEGImages/'
-label_img_path = '/home/deep/datasets/humanparsing/SegmentationParts/'
+color_img_path = os.path.expanduser('~/datasets/humanparsing/JPEGImages/')
+label_img_path = os.path.expanduser('~/datasets/humanparsing/SegmentationParts/')
 
 imgs = os.listdir(color_img_path)
 limgs = os.listdir(label_img_path)
